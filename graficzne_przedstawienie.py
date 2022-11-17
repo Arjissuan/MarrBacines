@@ -7,10 +7,9 @@ from Bio import SeqIO
 
 app = dash.Dash(__name__)
 
-data = ""
-for item in SeqIO.parse("/home/arjissuan/Desktop/SD1/mono_out.fsa", "fasta"):
-    data = data + ">{}\n{}\n".format(item.description, item.seq)
-print(data)
+data = urlreq.urlopen(
+    'https://raw.githubusercontent.com/Arjissuan/tunneling_project/master/viever.fasta'
+).read().decode('utf-8')
 app.layout = html.Div([
     dashbio.AlignmentChart(
         id='viewer',
