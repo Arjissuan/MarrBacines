@@ -4,10 +4,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="be9ff92d-e458-4125-b0df-b24524700af5" name="Changes" comment="Fasta_file">
+    <list default="true" id="be9ff92d-e458-4125-b0df-b24524700af5" name="Changes" comment="Added funtion to fasta, and made some fasta files.">
+      <change afterPath="$PROJECT_DIR$/classes/needleman-wunsch.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/izoelectric-point_and_numbering-amino-groups.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/adding_record.py" beforeDir="false" afterPath="$PROJECT_DIR$/adding_record.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bezw.py" beforeDir="false" afterPath="$PROJECT_DIR$/bezw.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/graficzne_przedstawienie.py" beforeDir="false" afterPath="$PROJECT_DIR$/graficzne_przedstawienie.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/liczneniaAT.py" beforeDir="false" afterPath="$PROJECT_DIR$/classes/liczneniaAT.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/najlepsze sekwencje.py" beforeDir="false" afterPath="$PROJECT_DIR$/najlepsze sekwencje.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sorting by biigust.py" beforeDir="false" afterPath="$PROJECT_DIR$/sorting by biigust.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -37,7 +43,7 @@
   &quot;keyToString&quot;: {
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/home/arjissuan/PycharmProjects/Panda+numpy&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/home/arjissuan/PycharmProjects/bioinfweb_backend&quot;,
     &quot;settings.editor.selected.configurable&quot;: &quot;com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable&quot;
   }
 }</component>
@@ -45,9 +51,12 @@
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$" />
     </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/classes" />
+    </key>
   </component>
   <component name="RunManager" selected="Python.najlepsze sekwencje">
-    <configuration name="adding_record" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+    <configuration name="bezw" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="Pandas+numpy" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -59,7 +68,7 @@
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/adding_record.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/bezw.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -89,7 +98,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="liczneniaAT" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+    <configuration name="izoelectric-point_and_numbering-amino-groups" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="Pandas+numpy" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -101,7 +110,7 @@
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/liczneniaAT.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/izoelectric-point_and_numbering-amino-groups.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -152,7 +161,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="sorting by biigust" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+    <configuration name="needleman-wunsch" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="Pandas+numpy" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -160,11 +169,11 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/classes" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/sorting by biigust.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/classes/needleman-wunsch.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -177,9 +186,9 @@
       <list>
         <item itemvalue="Python.najlepsze sekwencje" />
         <item itemvalue="Python.graficzne_przedstawienie" />
-        <item itemvalue="Python.liczneniaAT" />
-        <item itemvalue="Python.adding_record" />
-        <item itemvalue="Python.sorting by biigust" />
+        <item itemvalue="Python.bezw" />
+        <item itemvalue="Python.needleman-wunsch" />
+        <item itemvalue="Python.izoelectric-point_and_numbering-amino-groups" />
       </list>
     </recent_temporary>
   </component>
@@ -206,7 +215,14 @@
       <option name="project" value="LOCAL" />
       <updated>1668500647513</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Added funtion to fasta, and made some fasta files.">
+      <created>1668716916572</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1668716916572</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -223,6 +239,7 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="First commit to my branch" />
     <MESSAGE value="Fasta_file" />
-    <option name="LAST_COMMIT_MESSAGE" value="Fasta_file" />
+    <MESSAGE value="Added funtion to fasta, and made some fasta files." />
+    <option name="LAST_COMMIT_MESSAGE" value="Added funtion to fasta, and made some fasta files." />
   </component>
 </project>

@@ -1,7 +1,9 @@
 import pandas
 from Bio import SeqIO, SearchIO
 #do dodawania rzeczy do istniejacych juz tabel aktywnosci
+
 class Adding:
+    probki = ["SD1", "DBL", "D7", "MSI", "MKC", "MD89A", "MD87", "IK1", "M11", "MD19A", "AAT"]
     def add(self, rekord, sec_path):
         path = "/home/arjissuan/Desktop/tavle/table_with_numbers.ods"
         base = pandas.read_excel(path)
@@ -49,10 +51,27 @@ class Adding:
         print(tablica_inter_annota)
         return tablica_inter_annota
 
+    def add_decription_to_aligments(self, probe):
+        file = pandas.read_excel(r"/home/arjissuan/Desktop/{}/out_with_low_eV.ods".format(probe,probe), engine="odf")
+        file = file.drop(columns="Unnamed: 0")
+        des = list(SeqIO.parse(r"/home/arjissuan/Desktop/{}/PROKKA_all.faa".format(probe), 'fasta'))
+        des_list = list((item.description, item.name) for item in des)
+        bufor = pandas.DataFrame()
+        decri = []
+        for dest_item in des_list:
+            value = dest_item[1]
+            if len(file.query("query_id == @value")) > 0:
+                bufor = pandas.concat([bufor, file.query("query_id == @value")])
+                for i in range(len(file.query("query_id == @value"))):
+                    decri.append(dest_item[0])
 
+        bufor["query_description"] = decri
+        print(bufor)
+        return bufor
 
+    def izo_and_numeb(self):
 
-
+        return self
 
 
 #Adding().add("D7", "/home/arjissuan/Desktop/D7/out.ods")
@@ -61,4 +80,6 @@ class Adding:
 #new_file = (Adding().add_bias_to_out("/home/arjissuan/Desktop/AAT/results_AAT.txt", "/home/arjissuan/Desktop/AAT/out.ods"))
 #new_file.to_excel("/home/arjissuan/Desktop/AAT/out.ods")
 
-Adding().add_descriptions_to_existing().to_excel("/home/arjissuan/Desktop/tavle_significant/tablica_wysta_update.ods")
+#Adding().add_descriptions_to_existing().to_excel("/home/arjissuan/Desktop/tavle_significant/tablica_wysta_update.ods")
+for probe in Adding.probki:
+    Adding().add_decription_to_aligments(probe).to_excel(r"/home/arjissuan/Desktop/{}/out_with_low_eV.ods".format(probe))

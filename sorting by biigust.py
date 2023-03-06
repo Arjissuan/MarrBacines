@@ -1,6 +1,6 @@
 import numpy
 import pandas
-#usuwa wyniki ze zbyt wysokim evalue
+#usuwa wyniki ze zbyt wysokim evalue z wynikow /{}/out.ods
 #table = pandas.read_excel("/home/arjissuan/Desktop/tavle/table_with_numbers.ods", engine='odf')
 def numerous(list_of_probes):
     for probe in list_of_probes:
@@ -42,7 +42,6 @@ def significant(matrix):
 #
 def most_active(matrix):
     tavle = pandas.read_excel(r"/home/arjissuan/Desktop/tavle_significant/{}".format(matrix), engine='odf')
-
     table = tavle.to_numpy()
     wart = table[:, 2:]
     suma = numpy.array(0)
