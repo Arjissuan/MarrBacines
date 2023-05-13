@@ -4,16 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="be9ff92d-e458-4125-b0df-b24524700af5" name="Changes" comment="Added funtion to fasta, and made some fasta files.">
-      <change afterPath="$PROJECT_DIR$/classes/needleman-wunsch.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/izoelectric-point_and_numbering-amino-groups.py" afterDir="false" />
+    <list default="true" id="be9ff92d-e458-4125-b0df-b24524700af5" name="Changes" comment="Izoelectric point in progress&#10;Needlman-wunsch is excercise closely related&#10;Added alot changes, more than i can recall now.">
+      <change afterPath="$PROJECT_DIR$/hydrofobicity.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/adding_record.py" beforeDir="false" afterPath="$PROJECT_DIR$/adding_record.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bezw.py" beforeDir="false" afterPath="$PROJECT_DIR$/bezw.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/graficzne_przedstawienie.py" beforeDir="false" afterPath="$PROJECT_DIR$/graficzne_przedstawienie.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/liczneniaAT.py" beforeDir="false" afterPath="$PROJECT_DIR$/classes/liczneniaAT.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/najlepsze sekwencje.py" beforeDir="false" afterPath="$PROJECT_DIR$/najlepsze sekwencje.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sorting by biigust.py" beforeDir="false" afterPath="$PROJECT_DIR$/sorting by biigust.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/izoelectric-point_and_numbering-amino-groups.py" beforeDir="false" afterPath="$PROJECT_DIR$/izoelectric-point_and_numbering-amino-groups.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -43,7 +38,7 @@
   &quot;keyToString&quot;: {
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/home/arjissuan/PycharmProjects/bioinfweb_backend&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/home/arjissuan/PycharmProjects/Mushrooms-and-machine-learning&quot;,
     &quot;settings.editor.selected.configurable&quot;: &quot;com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable&quot;
   }
 }</component>
@@ -55,7 +50,28 @@
       <recent name="$PROJECT_DIR$/classes" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.najlepsze sekwencje">
+  <component name="RunManager" selected="Python.hydrofobicity">
+    <configuration name="best_sequences" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="Pandas+numpy" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/best_sequences.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <configuration name="bezw" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="Pandas+numpy" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -77,7 +93,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="graficzne_przedstawienie" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+    <configuration name="graph" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="Pandas+numpy" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -89,7 +105,28 @@
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/graficzne_przedstawienie.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/graph.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="hydrofobicity" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="Pandas+numpy" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/hydrofobicity.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -140,55 +177,13 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="najlepsze sekwencje" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="Pandas+numpy" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/najlepsze sekwencje.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
-    <configuration name="needleman-wunsch" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="Pandas+numpy" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/classes" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/classes/needleman-wunsch.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.najlepsze sekwencje" />
-        <item itemvalue="Python.graficzne_przedstawienie" />
-        <item itemvalue="Python.bezw" />
-        <item itemvalue="Python.needleman-wunsch" />
+        <item itemvalue="Python.hydrofobicity" />
         <item itemvalue="Python.izoelectric-point_and_numbering-amino-groups" />
+        <item itemvalue="Python.best_sequences" />
+        <item itemvalue="Python.graph" />
+        <item itemvalue="Python.bezw" />
       </list>
     </recent_temporary>
   </component>
@@ -222,7 +217,14 @@
       <option name="project" value="LOCAL" />
       <updated>1668716916572</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Izoelectric point in progress&#10;Needlman-wunsch is excercise closely related&#10;Added alot changes, more than i can recall now.">
+      <created>1678103796996</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1678103796996</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -240,6 +242,7 @@
     <MESSAGE value="First commit to my branch" />
     <MESSAGE value="Fasta_file" />
     <MESSAGE value="Added funtion to fasta, and made some fasta files." />
-    <option name="LAST_COMMIT_MESSAGE" value="Added funtion to fasta, and made some fasta files." />
+    <MESSAGE value="Izoelectric point in progress&#10;Needlman-wunsch is excercise closely related&#10;Added alot changes, more than i can recall now." />
+    <option name="LAST_COMMIT_MESSAGE" value="Izoelectric point in progress&#10;Needlman-wunsch is excercise closely related&#10;Added alot changes, more than i can recall now." />
   </component>
 </project>

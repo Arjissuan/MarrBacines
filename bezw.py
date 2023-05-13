@@ -17,7 +17,7 @@ def bezwzgledna(frame):
 #bezwzgledna("/home/arjissuan/Desktop/MD19A/out.ods")
 
 
-def del_of_longer(frame):
+def del_of_longer(frame): #function deletes longer than 100 AM or longer than annotation sequence if its 3x chain legnth bigger smaller than 100 AM
     df = pandas.read_excel(frame, engine='odf')
     df = df.drop(columns=["Unnamed: 0"])
     qlen = df['query_seq']
