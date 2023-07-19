@@ -4,11 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="be9ff92d-e458-4125-b0df-b24524700af5" name="Changes" comment="Izoelectric point in progress&#10;Needlman-wunsch is excercise closely related&#10;Added alot changes, more than i can recall now.">
-      <change afterPath="$PROJECT_DIR$/hydrofobicity.py" afterDir="false" />
+    <list default="true" id="be9ff92d-e458-4125-b0df-b24524700af5" name="Changes" comment="Roadmap&#10;For now my goal is to make this project readable to outsider since I was working for the most of the time mostly alone. My first 'teacher' left me to my own devices. This code is testimony of my learning journey with python. Most of this code can be reused for good backend app but curently it mostly a dream with all the classes. &#10;Changes to make:&#10;1.Documentation(for future)&#10;2.Design(need to rethink how to make all of that a functiong app)&#10;3.Implementation&#10;4.Testing, optimatization&#10;5.Propably further analisis will be needed if soo, we are discusing machine learning for now. &#10;&#10;Changes made:&#10;Renaming various files, for obvious reasons.&#10;Added new file, hydrofobicity.py, exchanges values in ATOM column to coresponding hydrofobicity of aminoacid. Was needed for 3d render of proteins.&#10;Minor changes in other files.">
+      <change afterPath="$PROJECT_DIR$/src/Data_analasis/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Data_analasis/data_analasis.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main_analasis.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bezw.py" beforeDir="false" afterPath="$PROJECT_DIR$/bezw.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/izoelectric-point_and_numbering-amino-groups.py" beforeDir="false" afterPath="$PROJECT_DIR$/izoelectric-point_and_numbering-amino-groups.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/kon_choices.py" beforeDir="false" afterPath="$PROJECT_DIR$/kon_choices.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -38,7 +40,7 @@
   &quot;keyToString&quot;: {
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/home/arjissuan/PycharmProjects/Mushrooms-and-machine-learning&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/home/arjissuan/PycharmProjects/bioinfweb_backend&quot;,
     &quot;settings.editor.selected.configurable&quot;: &quot;com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable&quot;
   }
 }</component>
@@ -50,7 +52,7 @@
       <recent name="$PROJECT_DIR$/classes" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.hydrofobicity">
+  <component name="RunManager" selected="Python.main_analasis">
     <configuration name="best_sequences" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="Pandas+numpy" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -64,27 +66,6 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/best_sequences.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
-    <configuration name="bezw" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="Pandas+numpy" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/bezw.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -177,13 +158,34 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+    <configuration name="main_analasis" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="Pandas+numpy" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/src" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/src/main_analasis.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.main_analasis" />
         <item itemvalue="Python.hydrofobicity" />
         <item itemvalue="Python.izoelectric-point_and_numbering-amino-groups" />
         <item itemvalue="Python.best_sequences" />
         <item itemvalue="Python.graph" />
-        <item itemvalue="Python.bezw" />
       </list>
     </recent_temporary>
   </component>
@@ -224,7 +226,14 @@
       <option name="project" value="LOCAL" />
       <updated>1678103796996</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Roadmap&#10;For now my goal is to make this project readable to outsider since I was working for the most of the time mostly alone. My first 'teacher' left me to my own devices. This code is testimony of my learning journey with python. Most of this code can be reused for good backend app but curently it mostly a dream with all the classes. &#10;Changes to make:&#10;1.Documentation(for future)&#10;2.Design(need to rethink how to make all of that a functiong app)&#10;3.Implementation&#10;4.Testing, optimatization&#10;5.Propably further analisis will be needed if soo, we are discusing machine learning for now. &#10;&#10;Changes made:&#10;Renaming various files, for obvious reasons.&#10;Added new file, hydrofobicity.py, exchanges values in ATOM column to coresponding hydrofobicity of aminoacid. Was needed for 3d render of proteins.&#10;Minor changes in other files.">
+      <created>1684003515458</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1684003515458</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -243,6 +252,7 @@
     <MESSAGE value="Fasta_file" />
     <MESSAGE value="Added funtion to fasta, and made some fasta files." />
     <MESSAGE value="Izoelectric point in progress&#10;Needlman-wunsch is excercise closely related&#10;Added alot changes, more than i can recall now." />
-    <option name="LAST_COMMIT_MESSAGE" value="Izoelectric point in progress&#10;Needlman-wunsch is excercise closely related&#10;Added alot changes, more than i can recall now." />
+    <MESSAGE value="Roadmap&#10;For now my goal is to make this project readable to outsider since I was working for the most of the time mostly alone. My first 'teacher' left me to my own devices. This code is testimony of my learning journey with python. Most of this code can be reused for good backend app but curently it mostly a dream with all the classes. &#10;Changes to make:&#10;1.Documentation(for future)&#10;2.Design(need to rethink how to make all of that a functiong app)&#10;3.Implementation&#10;4.Testing, optimatization&#10;5.Propably further analisis will be needed if soo, we are discusing machine learning for now. &#10;&#10;Changes made:&#10;Renaming various files, for obvious reasons.&#10;Added new file, hydrofobicity.py, exchanges values in ATOM column to coresponding hydrofobicity of aminoacid. Was needed for 3d render of proteins.&#10;Minor changes in other files." />
+    <option name="LAST_COMMIT_MESSAGE" value="Roadmap&#10;For now my goal is to make this project readable to outsider since I was working for the most of the time mostly alone. My first 'teacher' left me to my own devices. This code is testimony of my learning journey with python. Most of this code can be reused for good backend app but curently it mostly a dream with all the classes. &#10;Changes to make:&#10;1.Documentation(for future)&#10;2.Design(need to rethink how to make all of that a functiong app)&#10;3.Implementation&#10;4.Testing, optimatization&#10;5.Propably further analisis will be needed if soo, we are discusing machine learning for now. &#10;&#10;Changes made:&#10;Renaming various files, for obvious reasons.&#10;Added new file, hydrofobicity.py, exchanges values in ATOM column to coresponding hydrofobicity of aminoacid. Was needed for 3d render of proteins.&#10;Minor changes in other files." />
   </component>
 </project>

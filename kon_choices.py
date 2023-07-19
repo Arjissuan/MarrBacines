@@ -52,10 +52,6 @@ for item in range(len(data_readable["hit_id"])):
         print(indxx)
         data_readable["hit_seq"].append(record_hit_dict["seq"][indxx])
 
-
-
-
-
 print(len(data_readable["query_id"]),
       len(data_readable["query_seq"]),
       len(data_readable["hit_id"]),
@@ -63,18 +59,3 @@ print(len(data_readable["query_id"]),
 
 dt = pandas.DataFrame(data_readable)
 dt.to_excel("/home/arjissuan/Desktop/MD19A/out.ods")
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
