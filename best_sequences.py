@@ -1,7 +1,6 @@
 import pandas as pd
 
 
-
 class Threshold:
     def __init__(self, lista_probek):
         self.lista_probek = lista_probek

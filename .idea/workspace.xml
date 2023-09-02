@@ -4,13 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="be9ff92d-e458-4125-b0df-b24524700af5" name="Changes" comment="Roadmap&#10;For now my goal is to make this project readable to outsider since I was working for the most of the time mostly alone. My first 'teacher' left me to my own devices. This code is testimony of my learning journey with python. Most of this code can be reused for good backend app but curently it mostly a dream with all the classes. &#10;Changes to make:&#10;1.Documentation(for future)&#10;2.Design(need to rethink how to make all of that a functiong app)&#10;3.Implementation&#10;4.Testing, optimatization&#10;5.Propably further analisis will be needed if soo, we are discusing machine learning for now. &#10;&#10;Changes made:&#10;Renaming various files, for obvious reasons.&#10;Added new file, hydrofobicity.py, exchanges values in ATOM column to coresponding hydrofobicity of aminoacid. Was needed for 3d render of proteins.&#10;Minor changes in other files.">
-      <change afterPath="$PROJECT_DIR$/src/Data_analasis/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Data_analasis/data_analasis.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main_analasis.py" afterDir="false" />
+    <list default="true" id="be9ff92d-e458-4125-b0df-b24524700af5" name="Changes" comment="Started restructuriaztion of project. Rewrited first scattered scripts into categorized functions.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/kon_choices.py" beforeDir="false" afterPath="$PROJECT_DIR$/kon_choices.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/adding_record.py" beforeDir="false" afterPath="$PROJECT_DIR$/adding_record.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/best_sequences.py" beforeDir="false" afterPath="$PROJECT_DIR$/best_sequences.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Data_analasis/data_analasis.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/Data_analasis/data_analasis.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main_analasis.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/main_analasis.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -40,7 +39,7 @@
   &quot;keyToString&quot;: {
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/home/arjissuan/PycharmProjects/bioinfweb_backend&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/home/arjissuan/PycharmProjects/Pandas+numpy&quot;,
     &quot;settings.editor.selected.configurable&quot;: &quot;com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable&quot;
   }
 }</component>
@@ -233,7 +232,15 @@
       <option name="project" value="LOCAL" />
       <updated>1684003515458</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Started restructuriaztion of project. Rewrited first scattered scripts into categorized functions.">
+      <option name="closed" value="true" />
+      <created>1689808936817</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1689808936817</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -253,6 +260,7 @@
     <MESSAGE value="Added funtion to fasta, and made some fasta files." />
     <MESSAGE value="Izoelectric point in progress&#10;Needlman-wunsch is excercise closely related&#10;Added alot changes, more than i can recall now." />
     <MESSAGE value="Roadmap&#10;For now my goal is to make this project readable to outsider since I was working for the most of the time mostly alone. My first 'teacher' left me to my own devices. This code is testimony of my learning journey with python. Most of this code can be reused for good backend app but curently it mostly a dream with all the classes. &#10;Changes to make:&#10;1.Documentation(for future)&#10;2.Design(need to rethink how to make all of that a functiong app)&#10;3.Implementation&#10;4.Testing, optimatization&#10;5.Propably further analisis will be needed if soo, we are discusing machine learning for now. &#10;&#10;Changes made:&#10;Renaming various files, for obvious reasons.&#10;Added new file, hydrofobicity.py, exchanges values in ATOM column to coresponding hydrofobicity of aminoacid. Was needed for 3d render of proteins.&#10;Minor changes in other files." />
-    <option name="LAST_COMMIT_MESSAGE" value="Roadmap&#10;For now my goal is to make this project readable to outsider since I was working for the most of the time mostly alone. My first 'teacher' left me to my own devices. This code is testimony of my learning journey with python. Most of this code can be reused for good backend app but curently it mostly a dream with all the classes. &#10;Changes to make:&#10;1.Documentation(for future)&#10;2.Design(need to rethink how to make all of that a functiong app)&#10;3.Implementation&#10;4.Testing, optimatization&#10;5.Propably further analisis will be needed if soo, we are discusing machine learning for now. &#10;&#10;Changes made:&#10;Renaming various files, for obvious reasons.&#10;Added new file, hydrofobicity.py, exchanges values in ATOM column to coresponding hydrofobicity of aminoacid. Was needed for 3d render of proteins.&#10;Minor changes in other files." />
+    <MESSAGE value="Started restructuriaztion of project. Rewrited first scattered scripts into categorized functions." />
+    <option name="LAST_COMMIT_MESSAGE" value="Started restructuriaztion of project. Rewrited first scattered scripts into categorized functions." />
   </component>
 </project>

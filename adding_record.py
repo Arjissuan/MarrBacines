@@ -69,9 +69,6 @@ class Adding:
         print(bufor)
         return bufor
 
-    def izo_and_numeb(self):
-
-        return self
 
 
 #Adding().add("D7", "/home/arjissuan/Desktop/D7/out.ods")
