@@ -4,9 +4,7 @@ from Bio.SeqUtils.IsoelectricPoint import IsoelectricPoint
 import pandas as pd
 import numpy as np
 import os
-
 import matplotlib.pyplot as plt
-
 
 class MarrBacines:
     def __init__(self, location="/home/arjissuan/Desktop/", probes=("DBL", "IK1", "M11", "MD19A", "MD87", "MD89A", "MKC", "MSI", "SD1", "D7", "AAT")):
@@ -119,7 +117,7 @@ class MarrBacines:
 
         return np.absolute(hit_seq - query_seq), hit_seq, query_seq
 
-    def net_charge_calc(self, sequence, pH):
+    def net_charge_calc(self, sequence: pd.Series, pH: int) -> np.array:
         PKA_values = pd.DataFrame(
             data=[
                 [2.34, 2.34, 2.32, 2.36, 2.36, 2.28, 1.99, 1.83, 2.83, 2.02, 2.17, 2.21, 2.09, 2.2, 1.96, 1.88, 2.19, 2.18, 2.17, 1.82],
@@ -130,15 +128,29 @@ class MarrBacines:
             columns= ["G", "A", "V", "L", "I", "M", "P", "F", "W", "N",
                       "Q", "S", "T", "Y", "C", "D", "E", "K", "R", "H"]
         )
-
+        # Henderson_Haselbach
         find_N_terminal = lambda x: PKA_values.loc[1, x[0]]
         find_c_terminal = lambda x: PKA_values.loc[0, x[-1]]
         find_alifate = lambda x: PKA_values.loc[2, x]
-        Henderson_Haselbach_base = lambda x: sequence.count(x)*((10**find_alifate(x))/(10**pH+10**find_alifate(x)))
-        Henderson_Haselbach_acid = lambda x: sequence.count(x)*((10**pH)/(10**pH+10**find_alifate(x)))
-        Henderson_Haselbach_C = lambda x: (10**pH)/(10**pH+10**find_c_terminal(x))
-        Henderson_Haselbach_N = lambda x: (10**find_N_terminal(x))/(10**pH+10**find_N_terminal(x))
-        calculate = Henderson_Haselbach_N(sequence[0])-Henderson_Haselbach_C(sequence[-1])+np.sum(list(map(Henderson_Haselbach_base, ["R", "K", "H"])))-np.sum(list(map(Henderson_Haselbach_acid, ['D','E','C',"Y"])))
+        Hend_base = lambda y,x: y.count(x) * (
+                    np.power(10, find_alifate(x)) / (np.power(10, pH) + np.power(10, find_alifate(x))))
+        Hend_acid = lambda y,x: y.count(x) * (
+                    np.power(10, pH) / (np.power(10, pH) + np.power(10, find_alifate(x))))
+        Hend_C = lambda x: (10 ** pH) / (10 ** pH + 10 ** find_c_terminal(x))
+        Hend_N = lambda x: np.power(10, find_N_terminal(x)) / (np.power(10, pH) + np.power(10, find_N_terminal(x)))
+        seq_val = pd.DataFrame(
+            [list(map(Hend_N, sequence)),
+             list(map(Hend_C, sequence)),
+             list(map(Hend_acid, sequence, ['D' for i in range(len(sequence))])),
+             list(map(Hend_acid, sequence, ['E' for i in range(len(sequence))])),
+             list(map(Hend_acid, sequence, ['C' for i in range(len(sequence))])),
+             list(map(Hend_acid, sequence, ['Y' for i in range(len(sequence))])),
+             list(map(Hend_base, sequence, ['R' for i in range(len(sequence))])),
+             list(map(Hend_base, sequence, ['K' for i in range(len(sequence))])),
+             list(map(Hend_base, sequence, ['H' for i in range(len(sequence))]))
+            ]
+        )
+        calculate = np.subtract(np.sum(seq_val.loc[[0,6,7,8],:]), np.sum(seq_val.loc[[1,2,3,4,5],:]))
         return calculate
 
     def iso_elec_point(self, *args):
@@ -146,12 +158,18 @@ class MarrBacines:
         if len(args) >= 2:
             pH = args[1]
         else:
-            pH = np.arange(0,14, 0.01, dtype=np.float_)
-        izo_array = np.frompyfunc(self.net_charge_calc, 2, 1)
-        vector = izo_array(sequence, pH)
-        izo_point_indexes = np.where((-0.05 <= vector) & (vector <= 0.05))
-        izo_point = np.mean(pH[izo_point_indexes])
-        return izo_point
+            pH = np.arange(0, 14, 0.01, dtype=np.float64)
+
+        ph_content = {}
+        ph_calc = {}
+        for item in pH:
+            ph_content[item] = self.net_charge_calc(sequence, item)
+        ph_content = pd.DataFrame(ph_content)
+        ph_dataframe = np.absolute(ph_content)
+        for seq in ph_dataframe.T:
+            seq_in_ph = ph_dataframe.loc[seq, :]
+            ph_calc[seq] = np.mean(seq_in_ph[seq_in_ph < 0.5].index)
+        return pd.Series(ph_calc)
 
     def sort_by_anno(self, file_name):
         anno = {}
@@ -200,10 +218,10 @@ class MarrBacines:
     def table_of_occurance(self):
         pass
 
-    def best_sequences_by_HMM(self, df, e_value_tresh):
+    def best_sequences_by_HMM(self, df, e_value_tresh): #smaller evalue better
         return df[df['e-value'] < e_value_tresh]
 
-    def cut_to_long_seqs(self, df, max_length):
+    def cut_to_long_seqs(self, df, max_length): # end of histogram
         new_df = df[df['query_seq_len'] <= max_length]
         return new_df
 

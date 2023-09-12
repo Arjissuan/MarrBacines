@@ -4,8 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="be9ff92d-e458-4125-b0df-b24524700af5" name="Changes" comment="Made protein net charge calculator, becaues isoelectric point calculated by Biopython is wrong.">
+    <list default="true" id="be9ff92d-e458-4125-b0df-b24524700af5" name="Changes" comment="Added test files">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Data_analasis/data_analasis.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/Data_analasis/data_analasis.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main_analasis.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/main_analasis.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test_files/chem_prop_schmidt.ods" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test_files/out_SD1_schmidt.ods" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -38,12 +42,13 @@
   &quot;keyToString&quot;: {
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/home/arjissuan/PycharmProjects/Pandas+numpy&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/home/arjissuan/PycharmProjects/Pandas+numpy/test_files&quot;,
     &quot;settings.editor.selected.configurable&quot;: &quot;com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable&quot;
   }
 }</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/test_files" />
       <recent name="$PROJECT_DIR$" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
@@ -247,7 +252,15 @@
       <option name="project" value="LOCAL" />
       <updated>1693681449300</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="Added test files">
+      <option name="closed" value="true" />
+      <created>1693818404008</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1693818404008</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -269,6 +282,7 @@
     <MESSAGE value="Roadmap&#10;For now my goal is to make this project readable to outsider since I was working for the most of the time mostly alone. My first 'teacher' left me to my own devices. This code is testimony of my learning journey with python. Most of this code can be reused for good backend app but curently it mostly a dream with all the classes. &#10;Changes to make:&#10;1.Documentation(for future)&#10;2.Design(need to rethink how to make all of that a functiong app)&#10;3.Implementation&#10;4.Testing, optimatization&#10;5.Propably further analisis will be needed if soo, we are discusing machine learning for now. &#10;&#10;Changes made:&#10;Renaming various files, for obvious reasons.&#10;Added new file, hydrofobicity.py, exchanges values in ATOM column to coresponding hydrofobicity of aminoacid. Was needed for 3d render of proteins.&#10;Minor changes in other files." />
     <MESSAGE value="Started restructuriaztion of project. Rewrited first scattered scripts into categorized functions." />
     <MESSAGE value="Made protein net charge calculator, becaues isoelectric point calculated by Biopython is wrong." />
-    <option name="LAST_COMMIT_MESSAGE" value="Made protein net charge calculator, becaues isoelectric point calculated by Biopython is wrong." />
+    <MESSAGE value="Added test files" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added test files" />
   </component>
 </project>

@@ -3,6 +3,7 @@ import pandas as pd
 import os
 import numpy as np
 import time
+import numba
 class Done_tasks:
     def __init__(self, adres):
         self.analizator = MarrBacines(location=adres)
@@ -59,14 +60,13 @@ class Done_tasks:
 if __name__ == "__main__":
     task = Done_tasks(adres="/home/arjissuan/Desktop/cutinasy")
     analisys = MarrBacines(location="/home/arjissuan/Desktop/cutinasy")
-    annotations = [name for name in os.listdir("/home/arjissuan/Desktop/cutinasy/by_annotation")
-                   if os.path.isdir(os.path.join("/home/arjissuan/Desktop/cutinasy/by_annotation", name))]
+    # annotations = [name for name in os.listdir("/home/arjissuan/Desktop/cutinasy/by_annotation")
+    #                if os.path.isdir(os.path.join("/home/arjissuan/Desktop/cutinasy/by_annotation", name))]\
 
 
-    start = time.time()
-    values = []
-    for seq in pd.read_excel("/home/arjissuan/Desktop/cutinasy/chemical_properties/SD1/chem_prop_schmidt.ods", index_col=0)["sequence"]:
-        values.append(analisys.iso_elec_point(seq))
-    print(values, time.time()- start)
+
+
+
+
 
 
