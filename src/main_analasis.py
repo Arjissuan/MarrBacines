@@ -3,7 +3,7 @@ import pandas as pd
 import os
 import numpy as np
 import time
-import numba
+import mdtraj as md
 class Done_tasks:
     def __init__(self, adres):
         self.analizator = MarrBacines(location=adres)
@@ -62,11 +62,20 @@ if __name__ == "__main__":
     analisys = MarrBacines(location="/home/arjissuan/Desktop/cutinasy")
     # annotations = [name for name in os.listdir("/home/arjissuan/Desktop/cutinasy/by_annotation")
     #                if os.path.isdir(os.path.join("/home/arjissuan/Desktop/cutinasy/by_annotation", name))]\
+    loc = "/home/arjissuan/PycharmProjects/Pandas+numpy/md_filesls"
+    traj_nc = "prod1.nc"
+    traj_prmtop = "PDBID_prot_HH_1_FS.prmtop"
+    analisys.RMSD(loc, traj_nc, traj_prmtop)
+    analisys.RMSF(loc, traj_nc, traj_prmtop)
 
-
-
-
-
-
-
-
+    # for df_name in os.listdir(os.path.join(analisys.location, "by_annotation")):
+    #     if os.path.isdir(os.path.join(analisys.location, "by_annotation", df_name)):
+    #         print(df_name)
+    #         dt_fr = pd.read_excel(os.path.join(analisys.location, "by_annotation", df_name, f"all_of_{df_name}.ods"), index_col=0)
+    #         analisys.histograms(dt_fr)
+    #         sequence_len = int(input("Length of sequence: "))
+    #         evalue = float(input("E-value: "))
+    #         sroted_gf = task.selection_of_good_sequences(df_name, sequence_len, evalue)
+    #         print(len(sroted_gf))
+    #     #Have to ask about lenths of these proteins
+    #

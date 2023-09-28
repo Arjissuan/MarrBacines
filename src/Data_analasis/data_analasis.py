@@ -5,6 +5,7 @@ import pandas as pd
 import numpy as np
 import os
 import matplotlib.pyplot as plt
+import mdtraj as md
 
 class MarrBacines:
     def __init__(self, location="/home/arjissuan/Desktop/", probes=("DBL", "IK1", "M11", "MD19A", "MD87", "MD89A", "MKC", "MSI", "SD1", "D7", "AAT")):
@@ -234,3 +235,22 @@ class MarrBacines:
         counts, bins = np.histogram(df["query_seq_len"])
         plt.stairs(counts, bins, fill=True)
         plt.show()
+
+    def RMSD(self, location, traj_nc, traj_prmtop):
+        traj = md.load(os.path.join(location, traj_nc), top=os.path.join(location, traj_prmtop))
+        prot_sel = traj.topology.select('protein')
+        prot_traj = traj.atom_slice(prot_sel)
+
+        rmsds = md.rmsd(prot_traj, prot_traj, 0)
+        plt.scatter(np.arange(0, len(rmsds)), rmsds, marker='.', color='m', s=3, label='Rep 1')
+        plt.show()
+        return rmsds
+
+    def RMSF(self, location, traj_nc, traj_prmtop):
+        traj = md.load(os.path.join(location, traj_nc), top=os.path.join(location, traj_prmtop))
+        prot_sel = traj.topology.select('protein')
+        prot_traj = traj.atom_slice(prot_sel)
+        rmsf = md.rmsf(prot_traj, prot_traj,0)
+        plt.scatter(np.arange(0, len(rmsf)), rmsf, marker='.', color='g', s=3, label='Rep 1')
+        plt.show()
+        return rmsf

@@ -1,4 +1,3 @@
-import pandas as pd
 from biopandas.pdb import PandasPdb
 from Bio import SeqIO
 import os
