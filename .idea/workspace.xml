@@ -4,12 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="be9ff92d-e458-4125-b0df-b24524700af5" name="Changes" comment="Faster versions of net charge calculations and isoelectric point calculations.">
-      <change afterPath="$PROJECT_DIR$/gitignore" afterDir="false" />
+    <list default="true" id="be9ff92d-e458-4125-b0df-b24524700af5" name="Changes" comment="Last changes to the project">
       <change beforePath="$PROJECT_DIR$/.idea/Pandas+numpy.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Pandas+numpy.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/hydrofobicity.py" beforeDir="false" afterPath="$PROJECT_DIR$/hydrofobicity.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Data_analasis/data_analasis.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/Data_analasis/data_analasis.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main_analasis.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/main_analasis.py" afterDir="false" />
     </list>
@@ -44,7 +41,7 @@
   &quot;keyToString&quot;: {
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/home/arjissuan/PycharmProjects/Pandas+numpy/md_filesls&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/home/arjissuan/PycharmProjects/Mushrooms-and-machine-learning&quot;,
     &quot;settings.editor.selected.configurable&quot;: &quot;com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable&quot;
   }
 }</component>
@@ -55,8 +52,8 @@
       <recent name="$PROJECT_DIR$" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/md_filesls" />
       <recent name="$PROJECT_DIR$/classes" />
+      <recent name="$PROJECT_DIR$/md_filesls" />
     </key>
   </component>
   <component name="RunManager" selected="Python.main_analasis">
@@ -272,7 +269,15 @@
       <option name="project" value="LOCAL" />
       <updated>1694523886819</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="Last changes to the project">
+      <option name="closed" value="true" />
+      <created>1695893323652</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1695893323652</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -296,6 +301,7 @@
     <MESSAGE value="Made protein net charge calculator, becaues isoelectric point calculated by Biopython is wrong." />
     <MESSAGE value="Added test files" />
     <MESSAGE value="Faster versions of net charge calculations and isoelectric point calculations." />
-    <option name="LAST_COMMIT_MESSAGE" value="Faster versions of net charge calculations and isoelectric point calculations." />
+    <MESSAGE value="Last changes to the project" />
+    <option name="LAST_COMMIT_MESSAGE" value="Last changes to the project" />
   </component>
 </project>

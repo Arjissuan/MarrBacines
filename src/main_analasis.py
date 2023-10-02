@@ -20,7 +20,7 @@ class Done_tasks:
                 new_values[item]["Absolute"] = absulute[item][0]
                 new_values[item]["hit_seq_len"] = absulute[item][1]
                 new_values[item]["query_seq_len"] = absulute[item][2]
-                new_values[item].to_excel(self.analizator.find_files(self.analizator.probes[item], names), engine="odf")
+                new_values[item].to_excel(self.analizator.find_files(self.analizator.probes[item], names))
 
     def chem_prope(self, names=("branson.ods", "schmidt.ods")):
         for name in names:
@@ -48,7 +48,7 @@ class Done_tasks:
             save_in_files(key)
 
     def selection_of_good_sequences(self, annotation, seq_len, evalue):
-        location = f"/home/arjissuan/Desktop/cutinasy/by_annotation/{annotation}/all_of_{annotation}.ods"
+        location = os.path.join(self.analizator.location, "by_annotation", annotation, f'all_of_{annotation}.ods')
         df = pd.read_excel(location, engine='odf', index_col=0)
         df = self.analizator.cut_to_long_seqs(df, seq_len)
         df = self.analizator.best_sequences_by_HMM(df, evalue)
@@ -60,6 +60,7 @@ class Done_tasks:
 if __name__ == "__main__":
     task = Done_tasks(adres="/home/arjissuan/Desktop/cutinasy")
     analisys = MarrBacines(location="/home/arjissuan/Desktop/cutinasy")
+
     # annotations = [name for name in os.listdir("/home/arjissuan/Desktop/cutinasy/by_annotation")
     #                if os.path.isdir(os.path.join("/home/arjissuan/Desktop/cutinasy/by_annotation", name))]\
     loc = "/home/arjissuan/PycharmProjects/Pandas+numpy/md_filesls"
@@ -68,14 +69,16 @@ if __name__ == "__main__":
     analisys.RMSD(loc, traj_nc, traj_prmtop)
     analisys.RMSF(loc, traj_nc, traj_prmtop)
 
-    # for df_name in os.listdir(os.path.join(analisys.location, "by_annotation")):
+    #When Agata will be back I will do the rest.
+    # 1: len 350, ev 2.1e-10
+    # 2: len 340, ev 1.0e-10
+    # len_ev = [(380, 1.0e-2), (380, 1.0e-2)]
+    # for indx, df_name in enumerate(("LCC_4EB0_A", "TfCut2_4CG1_A")):
     #     if os.path.isdir(os.path.join(analisys.location, "by_annotation", df_name)):
     #         print(df_name)
-    #         dt_fr = pd.read_excel(os.path.join(analisys.location, "by_annotation", df_name, f"all_of_{df_name}.ods"), index_col=0)
-    #         analisys.histograms(dt_fr)
-    #         sequence_len = int(input("Length of sequence: "))
-    #         evalue = float(input("E-value: "))
+    #         dt_fr = pd.read_excel(os.path.join(analisys.location, "by_annotation", df_name, f"all_of_{df_name}.ods"), index_col=0, engine='odf')
+    #         #analisys.histograms(dt_fr, df_name)
+    #         sequence_len = len_ev[indx][0]
+    #         evalue = len_ev[indx][1]
     #         sroted_gf = task.selection_of_good_sequences(df_name, sequence_len, evalue)
-    #         print(len(sroted_gf))
-    #     #Have to ask about lenths of these proteins
-    #
+    #         print(sroted_gf)

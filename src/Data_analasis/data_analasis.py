@@ -33,7 +33,7 @@ class MarrBacines:
         funk = lambda x: (x.name, x.seq)
         for probe in self.probes:
             if results_name == ():
-                file = self.location + probe + f"/results_{probe}.txt"
+                file = os.path.join(self.location, probe, f"results_{probe}.txt")
                 AMP_DB = dict(map(funk, SeqIO.parse(os.path.join(self.location, probe, self.DB_name), "fasta")))
             else:
                 file = self.find_files(probe, "results_"+results_name[0])
@@ -75,8 +75,10 @@ class MarrBacines:
 
             if results_name == ():
                 df.to_excel(os.path.join(self.location, probe, f"out_{probe}.ods"))
+
             else:
                 df.to_excel(os.path.join(self.location, probe, f"out_{probe}_{results_name[0]}.ods"))
+
 
     def AMP_DB_chem_prop(self,DB_name):
         AMP_DB = list(map(lambda x: x, SeqIO.parse(self.find_files(self.probes[0], DB_name), "fasta")))
@@ -113,9 +115,8 @@ class MarrBacines:
     def absolute(self, probe, out_name):
         Df = pd.read_excel(self.find_files(probe, out_name), engine="odf")
         print(probe, out_name)
-        query_seq = np.array(list(map(lambda x: [len(x)] ,Df["query_seq"])))
+        query_seq = np.array(list(map(lambda x: [len(x)], Df["query_seq"])))
         hit_seq = np.array(list(map(lambda x: [len(x)], Df["hit_seq"])))
-
         return np.absolute(hit_seq - query_seq), hit_seq, query_seq
 
     def net_charge_calc(self, sequence: pd.Series, pH: int) -> np.array:
@@ -231,9 +232,12 @@ class MarrBacines:
         #delete annotations with no occurances
         pass
 
-    def histograms(self, df):
-        counts, bins = np.histogram(df["query_seq_len"])
-        plt.stairs(counts, bins, fill=True)
+    def histograms(self, df, df_name):
+        plt.hist(df['query_seq_len'], bins=90)
+        plt.title("{}".format(df_name))
+        plt.xlabel("Sequence lengths")
+        plt.ylabel("Number of sequences")
+        plt.axvline(x=380, color="red", linestyle='--', label="Cutting point{}".format(380))
         plt.show()
 
     def RMSD(self, location, traj_nc, traj_prmtop):
