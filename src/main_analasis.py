@@ -66,8 +66,8 @@ if __name__ == "__main__":
     loc = "/home/arjissuan/PycharmProjects/Pandas+numpy/md_filesls"
     traj_nc = "prod1.nc"
     traj_prmtop = "PDBID_prot_HH_1_FS.prmtop"
-    analisys.RMSD(loc, traj_nc, traj_prmtop)
-    analisys.RMSF(loc, traj_nc, traj_prmtop)
+    print(len(analisys.RMSD(loc, traj_nc, traj_prmtop)))
+    print(len(analisys.RMSF(loc, traj_nc, traj_prmtop)))
 
     #When Agata will be back I will do the rest.
     # 1: len 350, ev 2.1e-10

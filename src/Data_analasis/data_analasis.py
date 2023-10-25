@@ -246,7 +246,9 @@ class MarrBacines:
         prot_traj = traj.atom_slice(prot_sel)
 
         rmsds = md.rmsd(prot_traj, prot_traj, 0)
-        plt.scatter(np.arange(0, len(rmsds)), rmsds, marker='.', color='m', s=3, label='Rep 1')
+        plt.plot(np.arange(0, len(rmsds)), rmsds, color='m', label='Rep 1')
+        plt.title("RMSD of {}".format("Test sequence"))
+        plt.ylabel("Å")
         plt.show()
         return rmsds
 
@@ -255,6 +257,9 @@ class MarrBacines:
         prot_sel = traj.topology.select('protein')
         prot_traj = traj.atom_slice(prot_sel)
         rmsf = md.rmsf(prot_traj, prot_traj,0)
-        plt.scatter(np.arange(0, len(rmsf)), rmsf, marker='.', color='g', s=3, label='Rep 1')
+        plt.plot(np.arange(0, len(rmsf)), rmsf, color='g', label='Rep 1')
+        plt.title("RMSF of {}".format("Test sequence"))
+        plt.ylabel("Å")
+        plt.xlabel("Aminoacid")
         plt.show()
         return rmsf

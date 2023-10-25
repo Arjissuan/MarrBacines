@@ -1,2 +1,6 @@
 ./annotations_fastas
 ./venv
+./__pycache__
+./md_filesls
+
+
