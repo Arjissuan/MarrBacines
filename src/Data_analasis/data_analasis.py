@@ -36,7 +36,7 @@ class MarrBacines:
                 file = os.path.join(self.location, probe, f"results_{probe}.txt")
                 AMP_DB = dict(map(funk, SeqIO.parse(os.path.join(self.location, probe, self.DB_name), "fasta")))
             else:
-                file = self.find_files(probe, "results_"+results_name[0])
+                file = self.find_files(probe, results_name[0]+'.txt')
                 AMP_DB = dict(map(funk, SeqIO.parse(self.find_files(probe, results_name[1]), "fasta")))
 
             results = list(map(lambda x: x, SearchIO.parse(file, 'phmmer3-domtab')))
@@ -92,7 +92,6 @@ class MarrBacines:
                              "masa": (ProteinAnalysis(str(x.seq)).molecular_weight()),
                              "sec_structure_frac": (ProteinAnalysis(str(x.seq)).secondary_structure_fraction()),
                              "flex": (ProteinAnalysis(str(x.seq)).flexibility()),
-                             "izoel_point": (IsoelectricPoint(x.seq).pi()),
                              }
         AMP_properties = list(map(sec_lam, AMP_DB))
         return pd.DataFrame(AMP_properties)
@@ -107,7 +106,7 @@ class MarrBacines:
                                    'mass': ProteinAnalysis(x).molecular_weight(),
                                    'sec_structure_frac': ProteinAnalysis(x).secondary_structure_fraction(),
                                    'flexibility': ProteinAnalysis(x).flexibility(),
-                                   'izoel_point': IsoelectricPoint(x).pi()}
+                                   }
         Df = pd.read_excel(self.find_files(probe, name), engine="odf")
         new_df = list(map(value_prop, Df["query_seq"], Df["query_id"]))
         return pd.DataFrame(new_df)
@@ -119,27 +118,24 @@ class MarrBacines:
         hit_seq = np.array(list(map(lambda x: [len(x)], Df["hit_seq"])))
         return np.absolute(hit_seq - query_seq), hit_seq, query_seq
 
-    def net_charge_calc(self, sequence: pd.Series, pH: int) -> np.array:
+    def net_charge_calc(self, sequence: pd.Series, pH: float) -> np.array:
         PKA_values = pd.DataFrame(
             data=[
                 [2.34, 2.34, 2.32, 2.36, 2.36, 2.28, 1.99, 1.83, 2.83, 2.02, 2.17, 2.21, 2.09, 2.2, 1.96, 1.88, 2.19, 2.18, 2.17, 1.82],
                 [9.6, 9.69, 9.62, 9.6, 9.6, 9.21, 10.6, 9.13, 9.39, 8.8, 9.13, 9.15, 9.1, 9.11, 8.18, 9.6, 9.67, 8.95, 9.04, 9.17],
-                [np.nan, np.nan, np.nan, np.nan, np.nan, np.nan, np.nan, np.nan, np.nan, np.nan,
-                 np.nan, np.nan, np.nan, 10.07, 8.33, 3.65, 4.25, 10.53, 12.48, 6]
+                [np.nan, np.nan, np.nan, np.nan, np.nan, np.nan, np.nan, np.nan, np.nan, np.nan, np.nan, np.nan, np.nan, 10.07, 8.33, 3.65, 4.25, 10.53, 12.48, 6]
             ],
-            columns= ["G", "A", "V", "L", "I", "M", "P", "F", "W", "N",
-                      "Q", "S", "T", "Y", "C", "D", "E", "K", "R", "H"]
+            columns= ["G", "A", "V", "L", "I", "M", "P", "F", "W", "N", "Q", "S", "T", "Y", "C", "D", "E", "K", "R", "H"]
         )
         # Henderson_Haselbach
         find_N_terminal = lambda x: PKA_values.loc[1, x[0]]
         find_c_terminal = lambda x: PKA_values.loc[0, x[-1]]
         find_alifate = lambda x: PKA_values.loc[2, x]
-        Hend_base = lambda y,x: y.count(x) * (
-                    np.power(10, find_alifate(x)) / (np.power(10, pH) + np.power(10, find_alifate(x))))
-        Hend_acid = lambda y,x: y.count(x) * (
-                    np.power(10, pH) / (np.power(10, pH) + np.power(10, find_alifate(x))))
+        Hend_base = lambda y, x: y.count(x) * (np.power(10, find_alifate(x)) / (np.power(10, pH) + np.power(10, find_alifate(x))))
+        Hend_acid = lambda y, x: y.count(x) * (np.power(10, pH) / (np.power(10, pH) + np.power(10, find_alifate(x))))
         Hend_C = lambda x: (10 ** pH) / (10 ** pH + 10 ** find_c_terminal(x))
         Hend_N = lambda x: np.power(10, find_N_terminal(x)) / (np.power(10, pH) + np.power(10, find_N_terminal(x)))
+        print(['D' for i in range(len(sequence))])
         seq_val = pd.DataFrame(
             [list(map(Hend_N, sequence)),
              list(map(Hend_C, sequence)),
@@ -152,10 +148,14 @@ class MarrBacines:
              list(map(Hend_base, sequence, ['H' for i in range(len(sequence))]))
             ]
         )
-        calculate = np.subtract(np.sum(seq_val.loc[[0,6,7,8],:]), np.sum(seq_val.loc[[1,2,3,4,5],:]))
+        calculate = np.subtract(np.sum(seq_val.loc[[0, 6, 7, 8], :]), np.sum(seq_val.loc[[1, 2, 3, 4, 5],:]))
+        print(seq_val)
         return calculate
 
     def iso_elec_point(self, *args):
+        """
+        First value is sequence and second are pH values
+        """
         sequence = args[0]
         if len(args) >= 2:
             pH = args[1]

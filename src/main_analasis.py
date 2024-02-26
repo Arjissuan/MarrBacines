@@ -34,12 +34,15 @@ class Done_tasks:
         if 0 == len(from_sort_by_anno):
             file = str(input("branson.ods or schmidt.ods?"))
             from_sort_by_anno = self.analizator.sort_by_anno(file)
+        else:
+            from_sort_by_anno = self.analizator.sort_by_anno(from_sort_by_anno[0])
         whole_data = from_sort_by_anno
         save_in_files = lambda x: whole_data[x].to_excel(os.path.join(self.analizator.location,
                                                                       "by_annotation",
                                                                       x,
                                                                       f"all_of_{x}_test.ods"))
         mkdir = lambda x: os.mkdir(os.path.join(self.analizator.location, "by_annotation", x))
+        print(whole_data)
         for key in whole_data.keys():
             try:
                 mkdir(key)
@@ -60,14 +63,20 @@ class Done_tasks:
 if __name__ == "__main__":
     task = Done_tasks(adres="/home/arjissuan/Desktop/cutinasy")
     analisys = MarrBacines(location="/home/arjissuan/Desktop/cutinasy")
+    #analisys.domtab_to_excel('results_rcsb_pdb_4OYY', 'rcsb_pdb_4OYY.fasta')
+    # task.sorting('csb_pdb_4OYY.ods')
 
+    # analisys.iso_elec_point()
+    print(analisys.net_charge_calc(pd.Series(['MPPWHHPGSQPQTPCNTCYCKKCCYHCYVCFTSKGLGISYGRKKRRRRPAVGASRPDNKAFVPEQPTAITDRKQKRQEEQEKEVEKKAGPD']), 9.6))
     # annotations = [name for name in os.listdir("/home/arjissuan/Desktop/cutinasy/by_annotation")
     #                if os.path.isdir(os.path.join("/home/arjissuan/Desktop/cutinasy/by_annotation", name))]\
-    loc = "/home/arjissuan/PycharmProjects/Pandas+numpy/md_filesls"
-    traj_nc = "prod1.nc"
-    traj_prmtop = "PDBID_prot_HH_1_FS.prmtop"
-    print(len(analisys.RMSD(loc, traj_nc, traj_prmtop)))
-    print(len(analisys.RMSF(loc, traj_nc, traj_prmtop)))
+
+    #
+    # loc = "/home/arjissuan/PycharmProjects/Pandas+numpy/md_filesls"
+    # traj_nc = "prod1.nc"
+    # traj_prmtop = "PDBID_prot_HH_1_FS.prmtop"
+    # print(len(analisys.RMSD(loc, traj_nc, traj_prmtop)))
+    # print(len(analisys.RMSF(loc, traj_nc, traj_prmtop)))
 
     #When Agata will be back I will do the rest.
     # 1: len 350, ev 2.1e-10
